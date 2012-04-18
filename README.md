@@ -15,7 +15,7 @@ Accessing GTFS data from the source:
     source.routes
     source.trips
     source.stop_times
-    source.calendar
+    source.calendars
     source.calendar_dates
     source.fare_attributes
     source.fare_rules
