@@ -81,6 +81,14 @@ module GTFS
       @calendars
     end
 
+    # TODO: spec this
+    def calendar_dates
+      open(File.join(@tmp_dir, '/', 'calendar_dates.txt')) do |f|
+        @calendar_dates ||= CalendarDate.parse_calendar_dates(f.read)
+      end
+      @calendar_dates
+    end
+
     def routes
       open(File.join(@tmp_dir, '/', 'routes.txt')) do |f|
         @routes ||= Route.parse_routes(f.read)
