@@ -1,3 +1,10 @@
+PATH
+  remote: .
+  specs:
+    gtfs (0.1.0)
+      multi_json
+      rubyzip
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -8,6 +15,7 @@ GEM
     linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
     multi_json (1.0.4)
+    rake (0.9.2.2)
     rspec (2.8.0)
       rspec-core (~> 2.8.0)
       rspec-expectations (~> 2.8.0)
@@ -26,7 +34,7 @@ GEM
       ruby-debug-base19 (>= 0.11.19)
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
-    rubyzip (0.9.5)
+    rubyzip (0.9.7)
     simplecov (0.6.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.5.3)
@@ -38,9 +46,9 @@ PLATFORMS
 
 DEPENDENCIES
   fakeweb
-  multi_json (= 1.0.4)
-  rspec
+  gtfs!
+  rake
+  rspec (>= 2.0.0)
   ruby-debug19
-  rubyzip
   simplecov
   vcr
