@@ -9,8 +9,18 @@ module GTFS
       base.class_variable_set('@@optional_attrs', [])
       base.class_variable_set('@@required_attrs', [])
 
+      def errors
+        @errors ||= []
+      end
+
       def valid?
-        !self.class.required_attrs.any?{|f| self.send(f.to_sym).nil?}
+        self.class.required_attrs.each do |f|
+          if self.send(f.to_sym).nil?
+            errors << f.to_sym
+          end
+        end
+
+        return errors.empty?
       end
 
       def initialize(attrs)
